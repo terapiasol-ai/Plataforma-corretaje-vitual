@@ -116,7 +116,7 @@
         .item-costo.destacado { background: rgba(212, 175, 55, 0.08); padding: 8px; border-radius: 6px; font-weight: 700; color: var(--gold-light); margin: 6px 0; }
         .item-costo.total { border-bottom: none; font-weight: 800; font-size: 1.05rem; margin-top: 10px; }
 
-        /* DOLORES OCULTOS EVITADOS */
+        /* DOLORES OCULTOS */
         .dolores-box {
             background: #0D141F;
             border: 1.5px solid rgba(212, 175, 55, 0.35);
@@ -217,15 +217,15 @@
         .crm-table th { background: #141D2B; color: var(--gold-light); padding: 12px; border-bottom: 1.5px solid var(--gold); }
         .crm-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* 1. ESFERA FLOTANTE WHATSAPP BUSINESS */
-        #whatsapp-float-container {
+        /* 1. ESFERA FLOTANTE CANAL OFICIAL TELEGRAM */
+        #telegram-float-container {
             position: fixed;
             bottom: 20px;
             left: 15px;
             z-index: 999999;
         }
-        .whatsapp-bubble-btn {
-            background: #25D366;
+        .telegram-bubble-btn {
+            background: #229ED9;
             color: #FFF;
             border-radius: 50px;
             padding: 8px 16px;
@@ -233,13 +233,13 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 25px rgba(34, 158, 217, 0.5);
             font-weight: 700;
             font-size: 13px;
             transition: transform 0.2s;
         }
-        .whatsapp-bubble-btn:hover { transform: scale(1.05); }
-        .whatsapp-icon-circle {
+        .telegram-bubble-btn:hover { transform: scale(1.05); }
+        .telegram-icon-circle {
             width: 28px;
             height: 28px;
             background: #FFF;
@@ -247,8 +247,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #25D366;
-            font-size: 16px;
+            color: #229ED9;
+            font-size: 15px;
             font-weight: bold;
         }
 
@@ -297,7 +297,7 @@
         
         <div class="status-bar">
             <span>🟢 Secretaria Ejecutiva IA Activa</span> &bull; 
-            <span>Titular: <strong>Laura Erazo</strong> &bull; Atención en Web & WhatsApp Business</span>
+            <span>Titular: <strong>Laura Erazo</strong> &bull; Atención en Web & Telegram Oficial</span>
         </div>
     </header>
 
@@ -319,7 +319,7 @@
             </button>
         </div>
 
-        <!-- SECCIÓN 1: HALL DE ENTRADA & PROPUESTA DE AHORRO -->
+        <!-- SECCIÓN 1: HALL DE ENTRADA & COMPARATIVA REAL DE COSTOS -->
         <div id="seccion-landing" class="seccion-box activa">
             <div class="hall-banner">
                 <span class="badge-gold" style="font-size:0.75rem;">Tecnología Inmobiliaria de Vanguardia</span>
@@ -370,7 +370,7 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN NUEVA: DOLORES OCULTOS Y GASTOS INVISIBLES EVITADOS -->
+            <!-- SECCIÓN: DOLORES OCULTOS Y GASTOS INVISIBLES EVITADOS -->
             <div class="dolores-box">
                 <h3 style="color:var(--gold-light); font-size:1.25rem; margin-bottom:6px; text-align:center;">🚫 Los Costos Ocultos y Dolores de Cabeza que te Evitas</h3>
                 <p style="color:var(--text-muted); font-size:0.88rem; text-align:center;">Por qué $800.000 de entrada es una inversión que se paga sola en el primer mes:</p>
@@ -459,8 +459,8 @@
                     <button class="btn-sala" onclick="mostrarSeccion('agenda')">
                         <span>📅</span><span>Agendar Visita</span>
                     </button>
-                    <a class="btn-sala" href="https://wa.me/56992212429?text=Hola%20Laura,%20tengo%20una%20consulta%20inmobiliaria" target="_blank">
-                        <span>💬</span><span>WhatsApp Business</span>
+                    <a class="btn-sala" href="https://t.me/inmobiliarialaura_bot" target="_blank">
+                        <span>💬</span><span>Telegram Oficial</span>
                     </a>
                     <button class="btn-sala" onclick="toggleAudio()">
                         <span>🔄</span><span>Cambiar Voz/Texto</span>
@@ -560,11 +560,11 @@
 
     </div>
 
-    <!-- 1. ESFERA FLOTANTE WHATSAPP BUSINESS -->
-    <div id="whatsapp-float-container">
-        <a href="https://wa.me/56992212429?text=Hola%20Laura,%20tengo%20una%20consulta%20inmobiliaria" target="_blank" class="whatsapp-bubble-btn">
-            <div class="whatsapp-icon-circle">✆</div>
-            <span>WhatsApp Business</span>
+    <!-- 1. ESFERA FLOTANTE CANAL OFICIAL TELEGRAM -->
+    <div id="telegram-float-container">
+        <a href="https://t.me/inmobiliarialaura_bot" target="_blank" class="telegram-bubble-btn">
+            <div class="telegram-icon-circle">✈</div>
+            <span>Telegram Oficial</span>
         </a>
     </div>
 
@@ -600,10 +600,14 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE CONEXIÓN -->
+    <!-- SCRIPT DE CONEXIÓN CON TU SERVIDOR RENDER -->
     <script>
         const BACKEND_URL = "https://solsanchez-ai-inmobiliarialaura.onrender.com";
+        const FOTO_OFICIAL_LAURA = "https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/Screenshot_20260726_141527_Google.jpg";
         const brokerId = "laura";
+
+        // Aseguramos que la foto oficial quede fijada en la pantalla
+        document.getElementById("brokerLogo").src = FOTO_OFICIAL_LAURA;
 
         let salaActual = "comprador";
         let vozActiva = true;
