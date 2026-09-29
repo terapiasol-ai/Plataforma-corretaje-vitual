@@ -37,10 +37,10 @@
             align-items: center;
         }
         .header-logo {
-            width: 95px;
-            height: 95px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
-            border: 2px solid var(--gold);
+            border: 2.5px solid var(--gold);
             object-fit: cover;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
         }
@@ -97,7 +97,7 @@
         .seccion-box.activa { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* HALL DE ENTRADA */
+        /* HALL & COMPARATIVA */
         .hall-banner {
             background: linear-gradient(135deg, #16202E 0%, #0F1622 100%);
             border: 2px solid var(--gold);
@@ -109,11 +109,36 @@
         }
         .hall-banner h2 { font-size: 1.85rem; color: var(--gold-light); margin-bottom: 12px; }
 
-        .comparativa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; margin: 25px 0; }
+        .comparativa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 25px 0; }
         .card-gasto { background: rgba(239, 68, 68, 0.06); border: 1.5px solid rgba(239, 68, 68, 0.35); border-radius: 14px; padding: 22px; }
         .card-ahorro { background: rgba(37, 211, 102, 0.06); border: 2px solid var(--gold); border-radius: 14px; padding: 22px; position: relative; box-shadow: 0 0 25px rgba(212,175,55,0.2); }
         .item-costo { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); font-size: 0.9rem; }
+        .item-costo.destacado { background: rgba(212, 175, 55, 0.08); padding: 8px; border-radius: 6px; font-weight: 700; color: var(--gold-light); margin: 6px 0; }
         .item-costo.total { border-bottom: none; font-weight: 800; font-size: 1.05rem; margin-top: 10px; }
+
+        /* DOLORES OCULTOS EVITADOS */
+        .dolores-box {
+            background: #0D141F;
+            border: 1.5px solid rgba(212, 175, 55, 0.35);
+            border-radius: 14px;
+            padding: 25px 20px;
+            margin: 25px 0;
+            text-align: left;
+        }
+        .dolores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 18px;
+        }
+        .dolor-item {
+            background: rgba(20, 27, 38, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .dolor-item h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 0.98rem; }
+        .dolor-item p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.45; }
 
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 25px 0; }
         .tool-card {
@@ -147,7 +172,7 @@
         }
         .btn-descarga:hover { background: var(--gold); color: #070A0F !important; }
 
-        /* SUITE DE CORRETAJE & 10 BOTONES TELEGRAM */
+        /* SUITE DE CORRETAJE (10 BOTONES TELEGRAM) */
         .oficina-box { background: #0E1520; border: 2px solid var(--gold); border-radius: 16px; padding: 22px 18px; box-shadow: 0 10px 35px rgba(0,0,0,0.7); }
         .selector-salas { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 16px; }
         .btn-sala {
@@ -192,7 +217,42 @@
         .crm-table th { background: #141D2B; color: var(--gold-light); padding: 12px; border-bottom: 1.5px solid var(--gold); }
         .crm-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* WIDGET FLOTANTE */
+        /* 1. ESFERA FLOTANTE WHATSAPP BUSINESS */
+        #whatsapp-float-container {
+            position: fixed;
+            bottom: 20px;
+            left: 15px;
+            z-index: 999999;
+        }
+        .whatsapp-bubble-btn {
+            background: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            font-weight: 700;
+            font-size: 13px;
+            transition: transform 0.2s;
+        }
+        .whatsapp-bubble-btn:hover { transform: scale(1.05); }
+        .whatsapp-icon-circle {
+            width: 28px;
+            height: 28px;
+            background: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #25D366;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* 2. WIDGET FLOTANTE SECRETARIA IA */
         #widget-secretaria { position: fixed; bottom: 15px; right: 15px; z-index: 99999; }
         .widget-btn { background: rgba(14, 21, 32, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 8px 30px rgba(0,0,0,0.7); }
         .widget-chat { display: none; position: fixed; bottom: 75px; right: 15px; width: 350px; max-width: calc(100vw - 30px); height: 460px; background: #0E1520; border: 2px solid var(--gold); border-radius: 16px; flex-direction: column; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.85); }
@@ -225,7 +285,11 @@
 
     <header>
         <div class="header-logo-container">
-            <img id="brokerLogo" src="laura.jpg" onerror="this.src='https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg'" alt="Laura Erazo" class="header-logo">
+            <img id="brokerLogo" 
+                 src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/Screenshot_20260726_141527_Google.jpg" 
+                 onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg';" 
+                 alt="Laura Erazo" 
+                 class="header-logo">
         </div>
         <span class="badge-gold">Oficina Virtual Inmobiliaria 24/7</span>
         <h1 id="brokerNombreOficial">Oficina Virtual de Corretaje - Laura Erazo</h1>
@@ -233,7 +297,7 @@
         
         <div class="status-bar">
             <span>🟢 Secretaria Ejecutiva IA Activa</span> &bull; 
-            <span>Titular: <strong>Laura Erazo</strong> &bull; Atención en Web y Telegram</span>
+            <span>Titular: <strong>Laura Erazo</strong> &bull; Atención en Web & WhatsApp Business</span>
         </div>
     </header>
 
@@ -259,41 +323,87 @@
         <div id="seccion-landing" class="seccion-box activa">
             <div class="hall-banner">
                 <span class="badge-gold" style="font-size:0.75rem;">Tecnología Inmobiliaria de Vanguardia</span>
-                <h2>¿Cuánto Cuesta Realmente Mantener una Oficina Inmobiliaria Tradicional?</h2>
+                <h2>¿Cuánto Cuesta Realmente Instalar y Mantener una Oficina Física Tradicional?</h2>
                 <p style="color:#CBD5E1; max-width:860px; margin:0 auto 20px; font-size:1rem;">
-                    Arrendar un local físico, pagar meses de garantía, gastos comunes y contratar secretaria y asistentes consume millones cada mes. Con tu <strong>Oficina Virtual 24/7</strong> dispones de una secretaria ejecutiva con Inteligencia Artificial, voz neural y blindaje legal que atiende clientes sin descanso.
+                    Para arrendar una oficina física en Chile debes pagar de inmediato el primer mes de arriendo, el mes de garantía y los gastos comunes, superando fácilmente el millón y medio de pesos solo para entrar, más el sueldo de secretaria y asistentes cada mes. Con tu <strong>Oficina Virtual 24/7</strong> ahorras millones desde el primer día.
                 </p>
                 <button class="btn-submit" onclick="mostrarSeccion('oficina')">
                     🚀 Entrar a las Salas de Atención en Vivo
                 </button>
             </div>
 
-            <!-- COMPARATIVA REAL DE COSTOS -->
+            <!-- TABLA COMPARATIVA CON NÚMEROS REALES DE CHILE -->
             <div class="comparativa-grid">
                 <div class="card-gasto">
                     <h3 style="color:#FCA5A5; margin-bottom:12px;">❌ Oficina Física Tradicional</h3>
-                    <div class="item-costo"><span>Arriendo Comercial Mensual:</span> <span>$750.000 CLP</span></div>
-                    <div class="item-costo"><span>Garantía de Arriendo (Prorrateada):</span> <span>$62.500 CLP</span></div>
+                    
+                    <div class="item-costo destacado" style="color:#FCA5A5; background:rgba(239,68,68,0.12);">
+                        <span>Desembolso Inicial (Arriendo + Garantía + G.C.):</span>
+                        <span>$1.480.000 CLP</span>
+                    </div>
+                    
+                    <div class="item-costo"><span>Arriendo Comercial Mensual:</span> <span>$650.000 CLP</span></div>
                     <div class="item-costo"><span>Gastos Comunes Edificio:</span> <span>$180.000 CLP</span></div>
-                    <div class="item-costo"><span>Secretaria / Recepcionista:</span> <span>$650.000 CLP</span></div>
+                    <div class="item-costo"><span>Secretaria / Recepcionista (+ leyes sociales):</span> <span>$650.000 CLP</span></div>
                     <div class="item-costo"><span>Asistente Comercial / Administrativo:</span> <span>$550.000 CLP</span></div>
                     <div class="item-costo"><span>Servicios Básicos (Luz, Internet, Teléfono):</span> <span>$80.000 CLP</span></div>
-                    <div class="item-costo total" style="color:var(--danger);"><span>Gasto Mensual Estimado:</span> <span>$2.272.500 CLP</span></div>
+                    <div class="item-costo total" style="color:var(--danger);"><span>Gasto Mensual Recurrente:</span> <span>$2.110.000 CLP / mes</span></div>
+                    <p style="font-size:0.8rem; color:#F87171; margin-top:8px;">*Solo atiende en horario de oficina (8 horas al día de Lunes a Viernes).</p>
                 </div>
 
                 <div class="card-ahorro">
-                    <h3 style="color:var(--gold-light); margin-bottom:12px;">✅ Tu Oficina Virtual Interactiva 24/7</h3>
-                    <div style="font-size:1.9rem; font-weight:800; color:var(--gold-light); margin:8px 0;">$800.000 CLP <span style="font-size:0.92rem; font-weight:400; color:#E2E8F0;">Inversión Inicial</span></div>
-                    <div style="color:var(--accent-green); font-weight:700; font-size:1.1rem; margin-bottom:14px;">+ $99.000 CLP / mes (Todo Incluido)</div>
+                    <h3 style="color:var(--gold-light); margin-bottom:12px;">✅ Tu Oficina Virtual Inteligente 24/7</h3>
+                    
+                    <div class="item-costo destacado">
+                        <span>Inversión Inicial de Entrada (Pago Único):</span>
+                        <span>$800.000 CLP</span>
+                    </div>
+
+                    <div style="font-size:1.85rem; font-weight:800; color:var(--gold-light); margin:8px 0;">$99.000 CLP <span style="font-size:0.92rem; font-weight:400; color:#E2E8F0;">/ mes (Todo Incluido)</span></div>
+                    <div style="color:var(--accent-green); font-weight:700; font-size:1.05rem; margin-bottom:12px;">🟢 Sin garantías &bull; Sin gastos comunes &bull; Sin sueldos</div>
+                    
                     <div class="item-costo"><span>Secretaria IA con Voz Neural Humana:</span> <span>Incluida 24/7</span></div>
                     <div class="item-costo"><span>Salas de Auditoría CBR y Filtro Ley 18.101:</span> <span>Incluidas</span></div>
                     <div class="item-costo"><span>Agenda Infinita & Contactos Aislados:</span> <span>100% Privado</span></div>
                     <div class="item-costo"><span>Atención Bilingüe a Inversionistas Extranjeros:</span> <span>Incluida</span></div>
-                    <div class="item-costo total" style="color:var(--accent-green);"><span>¡Ahorro Real: +$2.170.000 CLP cada mes!</span></div>
+                    <div class="item-costo total" style="color:var(--accent-green);"><span>¡Ahorro Real: Más de $2.010.000 CLP cada mes!</span></div>
                 </div>
             </div>
 
-            <!-- GUÍAS IMPRIMIBLES -->
+            <!-- SECCIÓN NUEVA: DOLORES OCULTOS Y GASTOS INVISIBLES EVITADOS -->
+            <div class="dolores-box">
+                <h3 style="color:var(--gold-light); font-size:1.25rem; margin-bottom:6px; text-align:center;">🚫 Los Costos Ocultos y Dolores de Cabeza que te Evitas</h3>
+                <p style="color:var(--text-muted); font-size:0.88rem; text-align:center;">Por qué $800.000 de entrada es una inversión que se paga sola en el primer mes:</p>
+
+                <div class="dolores-grid">
+                    <div class="dolor-item">
+                        <h4>📜 Cero Pago de Patente Municipal</h4>
+                        <p>Te evitas los trámites burocráticos y el cobro semestral de patentes comerciales de oficina física.</p>
+                    </div>
+                    <div class="dolor-item">
+                        <h4>🛠️ Cero Arreglos y Mantención</h4>
+                        <p>Cero gastos imprevistos de gasfitería, cerraduras rotas, enchufes quemados o pintura de local.</p>
+                    </div>
+                    <div class="dolor-item">
+                        <h4>⚖️ Cero Riesgos Laborales ni Finiquitos</h4>
+                        <p>Cero imposiciones (AFP, Fonasa, Mutual, AFC), gratificaciones ni riesgo de demandas laborales.</p>
+                    </div>
+                    <div class="dolor-item">
+                        <h4>🩺 Cero Ausentismo ni Licencias Médicas</h4>
+                        <p>Tu oficina jamás queda botada. La secretaria IA atiende 24/7/365 sin faltas, permisos ni vacaciones.</p>
+                    </div>
+                    <div class="dolor-item">
+                        <h4>☕ Cero Cuentas ni Insumos de Cafetería</h4>
+                        <p>Te ahorras la luz comercial de alto costo, el gas, agua, café, azúcar y artículos de aseo permanente.</p>
+                    </div>
+                    <div class="dolor-item">
+                        <h4>⚡ Continuidad Total Garantizada</h4>
+                        <p>Aunque se corte la luz o el agua en tu sector, tu oficina virtual sigue captando clientes en la nube.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERRAMIENTAS IMPRIMIBLES -->
             <div class="tools-grid">
                 <div class="tool-card">
                     <div>
@@ -313,7 +423,7 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 2: OFICINA VIRTUAL CON LOS 10 BOTONES EXACTOS DE TELEGRAM -->
+        <!-- SECCIÓN 2: OFICINA VIRTUAL CON LOS 10 BOTONES TELEGRAM -->
         <div id="seccion-oficina" class="seccion-box">
             <div class="oficina-box">
                 <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(212,175,55,0.25); padding-bottom:10px; margin-bottom:15px; flex-wrap:wrap; gap:8px;">
@@ -349,8 +459,8 @@
                     <button class="btn-sala" onclick="mostrarSeccion('agenda')">
                         <span>📅</span><span>Agendar Visita</span>
                     </button>
-                    <a class="btn-sala" href="https://t.me/inmobiliarialaura_bot" target="_blank">
-                        <span>💬</span><span>Telegram Oficial</span>
+                    <a class="btn-sala" href="https://wa.me/56992212429?text=Hola%20Laura,%20tengo%20una%20consulta%20inmobiliaria" target="_blank">
+                        <span>💬</span><span>WhatsApp Business</span>
                     </a>
                     <button class="btn-sala" onclick="toggleAudio()">
                         <span>🔄</span><span>Cambiar Voz/Texto</span>
@@ -450,10 +560,18 @@
 
     </div>
 
-    <!-- WIDGET FLOTANTE SECRETARIA 24/7 -->
+    <!-- 1. ESFERA FLOTANTE WHATSAPP BUSINESS -->
+    <div id="whatsapp-float-container">
+        <a href="https://wa.me/56992212429?text=Hola%20Laura,%20tengo%20una%20consulta%20inmobiliaria" target="_blank" class="whatsapp-bubble-btn">
+            <div class="whatsapp-icon-circle">✆</div>
+            <span>WhatsApp Business</span>
+        </a>
+    </div>
+
+    <!-- 2. WIDGET FLOTANTE SECRETARIA IA -->
     <div id="widget-secretaria">
         <div class="widget-btn" onclick="toggleWidget()">
-            <img src="laura.jpg" onerror="this.src='https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg'" style="width:36px; height:36px; border-radius:50%; border:1.5px solid var(--gold); margin-right:8px;" alt="Secretaria">
+            <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/Screenshot_20260726_141527_Google.jpg" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg';" style="width:36px; height:36px; border-radius:50%; border:1.5px solid var(--gold); margin-right:8px;" alt="Secretaria">
             <div style="text-align:left; line-height:1.2;">
                 <div style="color:var(--gold-light); font-size:11.5px; font-weight:700;">Secretaria 24/7</div>
                 <div style="color:var(--accent-green); font-size:9.5px;">🟢 En Línea</div>
@@ -482,7 +600,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE CONEXIÓN CON EL CEREBRO DE RENDER -->
+    <!-- SCRIPT DE CONEXIÓN -->
     <script>
         const BACKEND_URL = "https://solsanchez-ai-inmobiliarialaura.onrender.com";
         const brokerId = "laura";
@@ -581,7 +699,7 @@
         }
 
         function toggleMic() {
-            if (!recognition) { alert("Micrófono no soportado en este navegador. Puedes escribir tu texto."); return; }
+            if (!recognition) { alert("Micrófono no soportado en este navegador. Puedes escribir tu consulta."); return; }
             if (grabando) { recognition.stop(); } else {
                 document.getElementById("inputChat").value = "";
                 recognition.lang = (salaActual === 'extranjeros') ? 'en-US' : 'es-CL';
